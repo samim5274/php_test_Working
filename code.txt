@@ -1,0 +1,63 @@
+<table>
+    <tbody>
+<?php 
+            error_reporting(0);
+            
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $database = "mystore";
+
+            //create connection
+            $connection = new mysqli($servername, $username, $password, $database);
+
+            //check connection
+            if ($connection->connection_error) {
+                die("Connection failed: " . $connection->connection_error);
+            }
+
+            //read all row from database
+            $sql = "SELECT * FROM employees";
+            $result = $connection->query($sql);
+
+            if (!result) {
+                die("Invalid query: " . $connection->error);
+            }
+
+            //read data of each row
+            while($row = $result->fetch_assoc()){
+                echo "<tr>
+                <td>" . $row["id"] . "</td>
+                <td>" . $row["first_name"] . "</td>
+                <td>" . $row["last_name"] . "</td>
+                <td>" . $row["email"] . "</td>
+                <td>" . $row["phone"] . "</td>
+                <td>" . $row["address"] . "</td>
+                <td>
+                    <a class='btn btn-primary btn-sm' href='update'>Update</a>
+                    <a class='btn btn-primary btn-sm' href='delete'>Delete</a>
+                </td>
+            </tr>";
+            }
+
+        ?>
+        
+    </tbody>
+    </table>
+
+
+
+    <?php
+                    $sql = "SELEC * FROM 'list'";
+                    $result = mysqli_query ($conn, $sql);  
+                                    
+                    while ($row = mysqli_fetch_assoc($result))
+                    {
+                        echo 
+                        "<tr>
+                            <td>".$row["en_no"]."</td>
+                            <td>".$row["name"]."</td>
+                            <td>".$row["division"]."</td>
+                        </tr>";
+                    }
+                ?>
