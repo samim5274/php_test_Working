@@ -61,3 +61,11 @@
                         </tr>";
                     }
                 ?>
+
+
+                table button every row
+
+                <td> 
+                            <a class='btn btn-primary btn-sm' href='update.php'>Update</a>
+                            <a class='btn btn-primary btn-sm' href='delete.php'>Delete</a>
+                        </td>

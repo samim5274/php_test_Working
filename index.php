@@ -54,7 +54,6 @@
                     <th>Enrollment</th>
                     <th>Name</th>
                     <th>Division</th>
-                    <th>Exprestion</th>
                 </tr>
 
                 <?php
@@ -82,11 +81,7 @@
                     echo "<tr>
                         <td>".$row["en_no"]."</td>
                         <td>".$row["name"]."</td>
-                        <td>".$row["division"]."</td>
-                        <td> 
-                            <a class='btn btn-primary btn-sm' href='update.php'>Update</a>
-                            <a class='btn btn-primary btn-sm' href='delete.php'>Delete</a>
-                        </td>
+                        <td>".$row["division"]."</td>                        
                         <tr>
                         
                     </tr> 
@@ -100,10 +95,12 @@
                 </div>
                
                <a class='btn btn-primary btn-sm' href='search.php'>Search</a>
+               <a class='btn btn-warning btn-sm' href='update.php'>Update</a>
+               <a class='btn btn-danger btn-sm' href='delete.php'>Delete</a>
 
             </table>
         </div>        
-
+        <button class="btn btn-primary btn-sm" onclick="history.go(-1)">Home</button>
     </div>
 
 

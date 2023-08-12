@@ -19,7 +19,7 @@
     }
     catch(Exception $ex)
     {
-        echo 'Error.';
+        echo '404 Error.';
     }
 
     function getPosts()
@@ -150,7 +150,7 @@
         }
         catch (Exception $ex)
         {
-            echo 'update data Sucessfully '.$ex->getMessage();
+            echo 'Data code not working. '.$ex->getMessage();
         }
     }
 
@@ -170,6 +170,7 @@
         <div class="table"><br><br>
             <form action="search.php" method="post">
                 ID : <input type="number" name="id" placeholder="id" value="<?php echo $id; ?>"><button name="search">Search</button><br><br>
+
                 New First Name: <input type="text" name="first_name" placeholder="first name"  value="<?php echo $fname; ?>"> <br><br>
                 New last Name: <input type="text" name="last_name" placeholder="last name"  value="<?php echo $lname; ?>"> <br><br>
                 New email: <input type="email" name="email" placeholder="example@email.com"  value="<?php echo $email; ?>"> <br><br>
