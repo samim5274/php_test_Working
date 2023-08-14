@@ -76,6 +76,8 @@
                     die("Invalid query: " . $connection->connect_errno);
                 }
 
+                
+
                 while($row = $result->fetch_assoc()) {
                     $count++;
                     echo "<tr>
@@ -88,6 +90,16 @@
                 </tr>";
                 }
 
+
+                //col number sum code ===============================
+                
+                $sql = "SELECT  SUM(en_no) from list";
+                $result = $connection->query($sql);
+                while($row = mysqli_fetch_array($result)){
+                    echo " Total Enrollment: ". $row['SUM(en_no)'];
+                    echo "<br>";
+                }
+
                 ?>
 
                 <div class="table count">
@@ -97,6 +109,7 @@
                <a class='btn btn-primary btn-sm' href='search.php'>Search</a>
                <a class='btn btn-warning btn-sm' href='update.php'>Update</a>
                <a class='btn btn-danger btn-sm' href='delete.php'>Delete</a>
+               <a class='btn btn-success btn-sm' href='picture.php'>Image</a>
 
             </table>
         </div>        
