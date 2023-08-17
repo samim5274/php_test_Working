@@ -122,6 +122,7 @@
                 New phone: <input type="number" name="phone" placeholder="+880 " value="<?php echo $phone; ?>"> <br><br>                
                 Address: <input type="text" name="address" placeholder="Address" value="<?php echo $address; ?>"><br><br>
                 <button class="btn btn-warning btn-sm" name="update" >Update</button>
+                <button class="btn btn-warning btn-sm" onclick="history.go(-1)" >Back</button>
             </form>
         </div>
     </div>

@@ -1,6 +1,22 @@
 <?php 
 
-    include 'upload.php';
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "mystore";
+
+    $connection = new mysqli($servername,$username,$password,$database);
+
+    if(isset($_POST["btnSubmit"]))
+    {
+        $file = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+        $query = "INSERT INTO pictureinfo(name) VALUES ('$file')";
+        if(mysqli_query($connection, $query))
+        {
+            echo '<script>alert("Inserted into Database")</script>';
+        }
+    }
+
 
 ?>
 
@@ -26,12 +42,57 @@
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="from-group">
                     <label for="image">Select image file:</label>
-                    <input type="file" name="image" class="form-control">
+                    <input type="file" name="image" id="image" class="form-control">
                 </div>
-                <input type="submit" name="submit" class="btn-primary form-control" value="Upload">
+                <input type="submit" name="btnSubmit" id="btnSubmit" class="btn-primary form-control" value="Upload">
             </form>
         </div>
     </div>
+
+    <table class="table">
+        <tr>
+            <th>Image</th>
+        </tr>
+        <?php
+            $query = "SELECT * FROM pictureinfo ORDER  BY id DESC";
+            $result = mysqli_query($connection,$query);
+            while($row = mysqli_fetch_array($result))
+            {
+                echo '
+                <tr>
+                    <td>
+                        <img src="data:image/jpeg;base64,'.base64_encode($row['name']).'" />
+                    </td>
+                </tr>
+                ';
+            }
+        ?>
+        
+    </table>
+
+    <script>
+        $(document).ready(function(){
+            $('#btnSubmit').click(function(){
+                var image_name = $('#image').val();
+                if(image_name == '')
+                {
+                    alert("Please select image");
+                    return false;
+                }
+                else
+                {
+                    var extension = $('#image').val().split('.').toLowerCase();
+                    if(jQeuery.inArray(extension , ['gif','png','jpg','jpeg'])== -1)
+                    {
+                        aleert('Invalid image file');
+                        $('#image').val('');
+                        return false;
+
+                    }
+                }
+            });
+        });
+    </script>
     
 </body>
 </html>
