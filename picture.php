@@ -10,7 +10,7 @@
     if(isset($_POST["btnSubmit"]))
     {
         $file = addslashes(file_get_contents($_FILES['image']['tmp_name']));
-        $query = "INSERT INTO pictureinfo(name) VALUES ('$file')";
+        $query = "INSERT INTO pictureinfo(image) VALUES ('$file')";
         if(mysqli_query($connection, $query))
         {
             echo '<script>alert("Inserted into Database")</script>';

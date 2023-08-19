@@ -15,9 +15,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+
+
     <center><h2>list of stuent</h2></center>
-    <div class="container">        
+    <div class="container">
         <div class="table"><br><br>
             <table>
                 <form action="insert.php" method="post">
@@ -28,7 +30,7 @@
                     <tr>
                         <th>Last Name</th>
                         <td><input type="text" name="lname" placeholder="Last name"></td>
-                    </tr>                                    
+                    </tr>
                     <tr>
                         <th>Divition</th>
                         <td>
@@ -43,10 +45,13 @@
                         <td></td>
                         <td><button type="submite">Save</button></td>
                     </tr>
-                </form>                
+                </form>
+                <button class="btn btn-warning" ><a href="addStudentInfo.php">Add Student</a></button>
             </table>
         </div>
-        
+
+
+
 
         <div class="table">
             <table>
@@ -61,14 +66,14 @@
                 $username = "root";
                 $password = "";
                 $database = "mystore";
-                
+
                 $connection = new mysqli($servername,$username,$password,$database);
 
                 if ($connection->connect_errno)
                 {
                     die("Connection faild: " . $connection->connect_errno);
                 }
-                
+
                 $sql = "SELECT * FROM LIST";
                 $result = $connection->query($sql);
 
@@ -76,23 +81,23 @@
                     die("Invalid query: " . $connection->connect_errno);
                 }
 
-                
+
 
                 while($row = $result->fetch_assoc()) {
                     $count++;
                     echo "<tr>
                         <td>".$row["en_no"]."</td>
                         <td>".$row["name"]."</td>
-                        <td>".$row["division"]."</td>                        
+                        <td>".$row["division"]."</td>
                         <tr>
-                        
-                    </tr> 
+
+                    </tr>
                 </tr>";
                 }
 
 
                 //col number sum code ===============================
-                
+
                 $sql = "SELECT  SUM(en_no) from list";
                 $result = $connection->query($sql);
                 while($row = mysqli_fetch_array($result)){
@@ -105,14 +110,14 @@
                 <div class="table count">
                     <div> <?php echo $count; ?> student</div>
                 </div>
-               
+
                <a class='btn btn-primary btn-sm' href='search.php'>Search</a>
                <a class='btn btn-warning btn-sm' href='update.php'>Update</a>
                <a class='btn btn-danger btn-sm' href='delete.php'>Delete</a>
                <a class='btn btn-success btn-sm' href='picture.php'>Image</a>
 
             </table>
-        </div>        
+        </div>
         <button class="btn btn-primary btn-sm" onclick="history.go(-1)">Home</button>
     </div>
 
