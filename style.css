@@ -1,8 +1,4 @@
-.container {
-    background-color: aliceblue;
-    margin: 5rem 8rem;
-    display: flex;
-}
+
 .table th {
     border:.1rem solid rgb(112, 106, 106);
 }
