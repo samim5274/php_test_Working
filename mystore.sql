@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2023 at 02:36 PM
+-- Generation Time: Aug 21, 2023 at 02:21 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -62,6 +62,29 @@ INSERT INTO `employees` (`id`, `first_name`, `last_name`, `email`, `phone`, `add
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(11) NOT NULL,
+  `image_url` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `image_url`) VALUES
+(18, 'IMG-64e34acabea1d9.68598747.jpg'),
+(19, 'IMG-64e34acdd265b1.49539231.jpg'),
+(20, 'IMG-64e34ad178cfc2.23523221.jpg'),
+(21, 'IMG-64e34adc38ed39.42668805.jpg'),
+(22, 'IMG-64e34b53e95fa3.34894136.jpg'),
+(23, 'IMG-64e35386b4c8b9.57547975.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `list`
 --
 
@@ -111,7 +134,8 @@ INSERT INTO `pictureinfo` (`id`, `name`, `image`, `Remark`) VALUES
 (11, '', '', NULL),
 (12, NULL, '', NULL),
 (13, NULL, '', NULL),
-(14, NULL, '', NULL);
+(14, NULL, '', NULL),
+(15, NULL, '', NULL);
 
 -- --------------------------------------------------------
 
@@ -157,6 +181,12 @@ ALTER TABLE `employees`
   ADD UNIQUE KEY `email` (`email`);
 
 --
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `list`
 --
 ALTER TABLE `list`
@@ -185,6 +215,12 @@ ALTER TABLE `employees`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
 -- AUTO_INCREMENT for table `list`
 --
 ALTER TABLE `list`
@@ -194,7 +230,7 @@ ALTER TABLE `list`
 -- AUTO_INCREMENT for table `pictureinfo`
 --
 ALTER TABLE `pictureinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tb_student_info`
