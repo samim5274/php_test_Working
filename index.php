@@ -115,6 +115,7 @@
                <a class='btn btn-warning btn-sm' href='update.php'>Update</a>
                <a class='btn btn-danger btn-sm' href='delete.php'>Delete</a>
                <a class='btn btn-success btn-sm' href='picture.php'>Image</a>
+               <a class='btn btn-success btn-sm' href='picture2.php'>Image2</a>
 
             </table>
         </div>

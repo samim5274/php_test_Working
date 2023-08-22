@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2023 at 02:21 PM
+-- Generation Time: Aug 22, 2023 at 02:55 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -80,7 +80,9 @@ INSERT INTO `images` (`id`, `image_url`) VALUES
 (20, 'IMG-64e34ad178cfc2.23523221.jpg'),
 (21, 'IMG-64e34adc38ed39.42668805.jpg'),
 (22, 'IMG-64e34b53e95fa3.34894136.jpg'),
-(23, 'IMG-64e35386b4c8b9.57547975.jpg');
+(23, 'IMG-64e35386b4c8b9.57547975.jpg'),
+(24, 'IMG-64e4598be86a52.22177876.jpg'),
+(25, 'IMG-64e459903722a8.06187193.jpg');
 
 -- --------------------------------------------------------
 
@@ -121,7 +123,7 @@ INSERT INTO `list` (`en_no`, `name`, `division`) VALUES
 
 CREATE TABLE `pictureinfo` (
   `id` int(11) NOT NULL,
-  `name` blob,
+  `name` varchar(255) DEFAULT NULL,
   `image` varchar(60) NOT NULL,
   `Remark` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -131,11 +133,16 @@ CREATE TABLE `pictureinfo` (
 --
 
 INSERT INTO `pictureinfo` (`id`, `name`, `image`, `Remark`) VALUES
-(11, '', '', NULL),
-(12, NULL, '', NULL),
-(13, NULL, '', NULL),
-(14, NULL, '', NULL),
-(15, NULL, '', NULL);
+(22, 'asdf', 'IMG-64e488d7bcfb67.08032155.jpg', NULL),
+(23, 'asdf', 'IMG-64e488dfa6f520.88463278.jpg', NULL),
+(24, '', 'IMG-64e489f9085206.54875344.jpg', NULL),
+(25, 'asdf', 'IMG-64e48a311c3913.67308476.jpg', NULL),
+(26, '', 'IMG-64e48b7feb77e6.90217034.jpg', NULL),
+(27, '', 'IMG-64e48baa2543f4.35748453.jpg', NULL),
+(28, '\0', 'IMG-64e4966c3dd505.95759350.jpg', NULL),
+(29, 'ASDF', 'IMG-64e49757bff139.00527386.jpg', NULL),
+(30, 'ashraful islam', 'IMG-64e49797719087.66337831.jpg', NULL),
+(31, 'samim', 'IMG-64e49861cda4b4.80136085.png', 'desktop image');
 
 -- --------------------------------------------------------
 
@@ -161,13 +168,16 @@ CREATE TABLE `tb_student_info` (
 --
 
 INSERT INTO `tb_student_info` (`Id`, `FirstName`, `LastName`, `Gender`, `DateOfBirth`, `PresentAddress`, `PermanentAddress`, `Department`, `Designation`, `Phone`) VALUES
-(1, 'John', 'Doe', 'male', '0000-00-00', 'Dhaka', 'Dhaka', 'MRC', 'MRE', 123),
-(2, 'John', 'Doe', 'male', '0000-00-00', 'Dhaka', 'Dhaka', 'MRC', 'MRE', 123),
-(3, 'John', 'Doe', 'male', '0000-00-00', 'Dhaka', 'Dhaka', 'MRC', 'MRE', 123),
+(1, 'John', 'Doe', 'male', '2003-02-02', 'Dhaka', 'Dhaka', 'MRC', 'MRE', 123),
+(2, 'John', 'Doe', 'male', '2001-01-01', 'Dhaka', 'Dhaka', 'MRC', 'MRE', 123),
+(3, 'John', 'Doe', 'male', '2000-12-12', 'Dhaka', 'Dhaka', 'MRC', 'MRE', 123),
 (5, 'Asad', 'Mia', '', '2023-08-01', 'adf', 'asdf', 'Merchandiser', 'asdf', 1234),
 (6, 'Maria', 'Akter', '', '2023-08-01', 'adf', 'asdf', 'Merchandiser', 'asdf', 1234),
 (7, 'Maria', 'Akter', '', '1996-08-01', 'Dhaka', 'Maymansing', 'Merchandiser', 'Sr.Merchandiser', 171484571),
-(8, 'Maria', 'Maria', '', '1996-08-01', 'Dhaka', 'Maymansing', 'Merchandiser', 'Sr.Merchandiser', 171484571);
+(8, 'Maria', 'Maria', '', '1996-08-01', 'Dhaka', 'Maymansing', 'Merchandiser', 'Sr.Merchandiser', 171484571),
+(9, 'Jack', 'Martin', 'Male', '1998-07-22', 'USA', 'Canada', 'Merchandiser', 'Jr.Mer', 548134625),
+(10, 'Rakib', 'Islam', '', '1999-12-12', '', '', '', '', 456789413),
+(11, 'Abir', 'Hossain', 'Male', '1995-12-12', '', '', '', '', 123456789);
 
 --
 -- Indexes for dumped tables
@@ -218,7 +228,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `list`
@@ -230,13 +240,13 @@ ALTER TABLE `list`
 -- AUTO_INCREMENT for table `pictureinfo`
 --
 ALTER TABLE `pictureinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tb_student_info`
 --
 ALTER TABLE `tb_student_info`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

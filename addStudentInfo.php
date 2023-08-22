@@ -34,6 +34,7 @@ $count = 0;
 <body>
 
   <section class="container">
+    <form action="" method="post">
     <div class="row">
         <div class="col-md-6">
             <label for="firstname" class="form-lable">Fisrt Name</label>
@@ -94,7 +95,8 @@ $count = 0;
             <button class="btn btn-primary">Save</button>     
             <button class="btn btn-warning">Clear</button>        
         </div>
-    </div>        
+    </div>     
+    </form>   
   </section>
 
 
@@ -118,7 +120,7 @@ $count = 0;
                         <label>Female</label><br>
                         
                         <label> Date of Birth</label><br>
-                        <input type="date" id="DateOfBirth" max="2023-12-31" min="2023-01-01" required name="DateOfBirth"><br>  
+                        <input type="date" id="DateOfBirth" required name="DateOfBirth"><br>  
 
                                 <label>Present Address</label><br>
                                 <input type="text" name="p1Address" id="p1Address" class="form-control" placeholder="Present Address"><br>
