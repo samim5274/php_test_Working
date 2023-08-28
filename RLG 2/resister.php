@@ -3,158 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <script type="text/javascript">
+        function preventBack(){window.history.forward()};
+        setTimeout("preventBack()",0);
+        window.onunload=function(){null};
+    </script>
+    <link rel="stylesheet" href="css/register.css">
     <title>-RLG/Resigter</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-        }
-        body {
-            background: #ecf0f3;
-        }  
-        .card-registration .select-input.form-control[readonly]:not([disabled]) {
-        font-size: 1rem;
-        line-height: 2.15;
-        padding-left: .75em;
-        padding-right: .75em;
-        }
-        .card-registration .select-arrow {
-        top: 13px;
-        }
-</style>
+    
 </head>
 <body>
 
-<section class="h-100 bg-dark">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col">
-        <div class="card card-registration my-4">
-          <div class="row g-0">
-            <div class="col-xl-6 d-none d-xl-block">
-              <img src="bg (14).jpg" alt="Sample photo" class="img-fluid"
-                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
-            </div>
-            <div class="col-xl-6">
-              <div class="card-body p-md-5 text-black">
-                <h3 class="mb-5 text-uppercase">Student registration form</h3>
 
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1m">First name</label>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="wrapper">
+                <div class="text-center  name">
+                <div class="logo">
+                        <img src="img/bg (19).jpg" alt="Sign Up">
+                    </div>
+                    -Sign in
+                  <form action="createUser.php" method="post">
+                    <div class="form-field d-flex align-items-center">
+                      <span class="fas fa-user"></span>
+                      <input type="text" name="firstName" placeholder="First name" required>
+                    </div>
+                    <div class="form-field d-flex align-items-center">
+                      <span class="fas fa-user"></span>
+                      <input type="text" name="lastName" placeholder="Last name">
+                    </div>
+                    <div class="form-field d-flex align-items-center">
+                      <span class="fa fa-envelope"></span>
+                      <input type="text" name="email" placeholder="Email address" required>
+                    </div>
+                    <div class="form-field d-flex align-items-center">
+                      <span class="fa fa-calendar"></span>
+                      <input type="date" name="dateOfBirth">
+                    </div>
+                    <div class="form-field d-flex align-items-center">
+                      <span class="fa fa-location-arrow"></span>
+                      <input type="text" name="address" placeholder="Address">
+                    </div>
+                    <div class="form-field d-flex align-items-center">
+                      <span class="fa fa-phone-square"></span>
+                      <input type="number" name="phone" required placeholder="Phone">
+                    </div>
+                    <div class="form-field d-flex align-items-center">
+                      <span class="fa fa-user"></span>
+                      <input type="text" name = "username" placeholder="Username">                      
+                    </div>
+                    <p class="form-text text-muted mb-4">You cann't change your username!</p>
+                    <div class="form-field d-flex align-items-center">
+                      <span class="fa fa-lock"></span>
+                      <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-check d-flex justify-content-center mb-5">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                      <label class="form-check-label" for="flexSwitchCheckDefault">I agree all statements in <a href="#">Terms of service</a></label>
                     </div>
                   </div>
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1n">Last name</label>
-                    </div>
-                  </div>
+                    <!-- <div type="submit" class="btn btn-primary">Register</div>   -->
+                    <button type="submit" class="btn btn-primary">Register</button>
+                  </form>
+                  <a href="index.php" class="btn btn-primary my-4"><span class="fa fa-arrow-left"></span> Back</a>              
                 </div>
-
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1m1" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1m1">Mother's name</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1n1" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1n1">Father's name</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example8" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example8">Address</label>
-                </div>
-
-                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-                  <h6 class="mb-0 me-4">Gender: </h6>
-
-                  <div class="form-check form-check-inline mb-0 me-4">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                      value="option1" />
-                    <label class="form-check-label" for="femaleGender">Female</label>
-                  </div>
-
-                  <div class="form-check form-check-inline mb-0 me-4">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                      value="option2" />
-                    <label class="form-check-label" for="maleGender">Male</label>
-                  </div>
-
-                  <div class="form-check form-check-inline mb-0">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                      value="option3" />
-                    <label class="form-check-label" for="otherGender">Other</label>
-                  </div>
-
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-
-                    <select class="select">
-                      <option value="1">State</option>
-                      <option value="2">Option 1</option>
-                      <option value="3">Option 2</option>
-                      <option value="4">Option 3</option>
-                    </select>
-
-                  </div>
-                  <div class="col-md-6 mb-4">
-
-                    <select class="select">
-                      <option value="1">City</option>
-                      <option value="2">Option 1</option>
-                      <option value="3">Option 2</option>
-                      <option value="4">Option 3</option>
-                    </select>
-
-                  </div>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example9" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example9">DOB</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example90" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example90">Pincode</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example99" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example99">Course</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example97" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example97">Email ID</label>
-                </div>
-
-                <div class="d-flex justify-content-end pt-3">
-                  <button type="button" class="btn btn-light btn-lg">Reset all</button>
-                  <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button>
-                </div>
-
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-    
+
+        <div class="container">
+        <?php
+              if(isset($_GET['error'])){ ?>
+              <p class="error"><?php echo $_GET['error']; ?></p>
+          <?php   }
+          ?>
+        </div>
+
+        <!--<div class="container">
+          Button trigger modal 
+          <button type="button" class="btn btn-primary m-4" data-toggle="modal" data-target="#staticBackdrop">
+            Register
+          </button>-->
+
+          <!-- Modal 
+          <form >
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"          aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Creating <a href="index.php" target="_blank">-RLG</a>  new account!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span class="close2" aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure create new account? And check all terms and condition.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary">Save</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>-->
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script>
+          $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').trigger('focus')
+          })
+        </script>
+
 </body>
 </html>

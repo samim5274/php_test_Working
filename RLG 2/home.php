@@ -125,7 +125,7 @@
                 <a class="nav-link" href="#">Rule</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Feedback</a>
+                <a class="nav-link" href="PostVlogs.php">Vlogs</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
