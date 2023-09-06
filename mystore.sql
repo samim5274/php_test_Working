@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2023 at 02:55 PM
+-- Generation Time: Sep 06, 2023 at 02:10 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -76,13 +76,9 @@ CREATE TABLE `images` (
 
 INSERT INTO `images` (`id`, `image_url`) VALUES
 (18, 'IMG-64e34acabea1d9.68598747.jpg'),
-(19, 'IMG-64e34acdd265b1.49539231.jpg'),
 (20, 'IMG-64e34ad178cfc2.23523221.jpg'),
-(21, 'IMG-64e34adc38ed39.42668805.jpg'),
-(22, 'IMG-64e34b53e95fa3.34894136.jpg'),
-(23, 'IMG-64e35386b4c8b9.57547975.jpg'),
-(24, 'IMG-64e4598be86a52.22177876.jpg'),
-(25, 'IMG-64e459903722a8.06187193.jpg');
+(22, '1581695119.jpg'),
+(23, 'IMG-64e35386b4c8b9.57547975.jpg');
 
 -- --------------------------------------------------------
 
@@ -142,7 +138,9 @@ INSERT INTO `pictureinfo` (`id`, `name`, `image`, `Remark`) VALUES
 (28, '\0', 'IMG-64e4966c3dd505.95759350.jpg', NULL),
 (29, 'ASDF', 'IMG-64e49757bff139.00527386.jpg', NULL),
 (30, 'ashraful islam', 'IMG-64e49797719087.66337831.jpg', NULL),
-(31, 'samim', 'IMG-64e49861cda4b4.80136085.png', 'desktop image');
+(31, 'samim', 'IMG-64e49861cda4b4.80136085.png', 'desktop image'),
+(32, 'asdf', 'IMG-64e5a793bcb117.98387324.png', 'asdf'),
+(33, 'asdf', 'IMG-64f84192c90800.12685268.jpg', 'asdf');
 
 -- --------------------------------------------------------
 
@@ -228,7 +226,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `list`
@@ -240,7 +238,7 @@ ALTER TABLE `list`
 -- AUTO_INCREMENT for table `pictureinfo`
 --
 ALTER TABLE `pictureinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tb_student_info`

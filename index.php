@@ -120,6 +120,8 @@
             </table>
         </div>
         <button class="btn btn-primary btn-sm" onclick="history.go(-1)">Home</button>
+
+        <button class="btn btn-danger btn-sm m-4 "><a href="deleteImg.php">Delete Image</a></button>
     </div>
 
 

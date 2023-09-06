@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        
         <form action="insertPicture2.php" method="post" enctype="multipart/form-data">
             <div class="form-group">   
                 <label for="name" >Your name</label>
@@ -21,6 +22,8 @@
             </div>
         </form>
     </div>
+
+    
     
 </body>
 </html>
