@@ -1,4 +1,5 @@
-<?php    include 'PDB.php' ?>
+<?php session_start();  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,34 +19,58 @@
             </div>
         </div>
 
-        <div class="container">
-        <table class="table">
-            <tr>
-                <td>#</td>
-                <td>Id</td>
-                <td>Name</td>
-                <td>Remark</td>
-                <td>Image</td>
-            </tr>
-            <?php             
-                $images = mysqli_query($connection, "SELECT * FROM pictureinfo");
-                $i = 1;
-                foreach($images as $img):
-            ?>
-            <tr>
-                <td><?php echo $i++; ?></td>
-                <td><?php echo $img['id']; ?></td>
-                <td><?php echo $img['name']; ?></td>
-                <td><?php echo $img['Remark']; ?></td>
-                <td><img class="img-fluit" src="Pic/<?php echo $img['image']; ?>" alt="Not found" width="200px"></td>
-                <td><input type="button" class="btn btn-info btn-sm " name="btnEdit" value="Edit"></td>
-            </tr>
+    <div class="container">
+    <?php    
 
-            <?php endforeach; ?>
+        include "PDB.php" ;
 
-        </table>
+        $id = $_GET['id'];
+
+        $query = "SELECT * FROM pictureinfo WHERE id = '$id'";
+
+        $query_result = mysqli_query($connection, $query);
+
+        if(mysqli_num_rows($query_result) > 0)
+        {
+            foreach($query_result as $row)
+            {
+                ?>
+            <form action="updatePictureBack.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">   
+                    <label for="id" >Your updatable ID</label>
+                    <input type="text" value="<?php echo $row['id']; ?>" name="id" id="id" class="form-control" placeholder="Please select the item" disabled ><br>
+                    <label for="name" >Your name</label>
+                    <input type="text" value="<?php echo $row['name']; ?>" name="fileName" id="name" class="form-control" placeholder="type you name" ><br>
+                    <label for="remark" >Remarks</label>
+                    <input type="text" value="<?php echo $row['Remark']; ?>" name="remark" id="remark" class="form-control" placeholder="remark" ><br>
+
+                    <label for="image" >Select image file</label>
+                    <input type="file" name="my_image" id="image" class="form-control" ><br>
+                    <input type="hidden" name="image_old" value="<?php echo $row['image']; ?>">
+
+                    <img src="<?php echo "Pic/".$row['image']; ?>" width="100px" alt="not found!">
+
+                    <input type="submit" name="btnInsert" id="btnEdit" class="btn btn-primary form-control" value="Edit">
+                    <br><br>
+                </div>
+            </form>
+                <?php
+            }
+        }
+        else
+        {
+            echo "No record found";
+        }
+
+
+        ?>
     </div>
 
+    <div class="container">        
+        
+    </div>
+
+        
 
 </body>
 </html>

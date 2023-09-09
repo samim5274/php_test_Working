@@ -23,7 +23,7 @@
     
 
     <div class="container">        
-        <form action="code.php" method="post" enctype="multipart/form-data">
+        <form action="insertPictureBack.php" method="post" enctype="multipart/form-data">
             <div class="form-group">   
                 <label for="name" >Your name</label>
                 <input type="text" name="fileName" id="name" class="form-control" placeholder="type you name" ><br>
@@ -59,6 +59,7 @@
                 <td><?php echo $img['name']; ?></td>
                 <td><?php echo $img['Remark']; ?></td>
                 <td><img class="img-fluit" src="Pic/<?php echo $img['image']; ?>" alt="Not found" width="200px"></td>
+                <td><a class="btn btn-info btn-sm" href="updatePicture.php?id=<?php echo $img['id']; ?>">Edit</a></td>
             </tr>
 
             <?php endforeach; ?>
