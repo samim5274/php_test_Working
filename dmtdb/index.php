@@ -15,8 +15,8 @@
         <h1 class="display-4">Dormitor System</h1>
         <div class="col">
         <button class="btn btn-info "><a href="StudentInfo/std_info.php">Insert</a></button>            
-        <button class="btn btn-warning ">Update</button>            
-        <button class="btn btn-danger ">Delete</button>            
+        <button class="btn btn-warning ">Money Diposit</button>            
+        <button class="btn btn-danger ">Mil</button>            
         </div>
     </div>
 </div>

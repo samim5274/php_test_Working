@@ -6,14 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Dormitory System</title>
+    <style>
+        .overflow-auto{
+            width:100%;
+            height: 1220px;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
 
 
+
+
+    <!--Data insert code-->
+
 <section class="container mt-2">
     <div class="row">
         <h1 class="display-4 text-center">Dormitor System</h1>
-        <div class="col-6">
+        <div class="col-md-6">
             <form action="addStudentBack.php" method="POST">
                 <div class="col-md-12">
                     <label for="fname"class="form-label" >First Name</label>
@@ -72,10 +83,17 @@
                     <textarea class="form-control" name="txtRemark" placeholder="You can write something for note(Optional)." id="remark" cols="30" rows="5"></textarea>
                 </div><br>
                 <input type="submit" name="btnSave" class="btn btn-info my-4" value="Save">
+                <button class="btn btn-primary"><a href="filterStd.php" class="text-light">Filter with date</a></button>
             </form>
         </div>
-        <div class="col">
-            <table class="table table-striped text-center ">
+
+   
+
+
+                <!--Data show code-->
+
+        <div class="col overflow-auto">
+            <table class="table table-bordered text-center ">
                 <tr>
                     <th>SL</th>
                     <th>Name</th>
