@@ -10,21 +10,30 @@
 <body>
 
 
-<div class="container mt-2">
+<div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <select class="form-select">
-            <?php 
-                $sql = "SELECT * FROM tb_std_info";
-                $result = mysqli_query($conn,$sql);
-                ?><option selected disabled>Select name</option><?php
-                while($row = mysqli_fetch_array($result)){?>
-                    
-                    <option value="<?php echo $row['Id'];?>"><?php echo $row['Name'];?></option>
-            <?php    }?>
-            </select>
+        <div class="col text-center my-4">
+            <h1>Money Diposit</h1>
         </div>
+    </div>
+</div>
+
+
+<div class="container mt-2">    
+    <div class="row">
+        <div class="col-md-4"></div>
         <div class="col-md-4">
+        <div class="form-group">
+            <input type="date" name="dipositDate" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <label for="fname"class="form-label" >Receiver</label>
             <select class="form-select">
             <?php 
                 $sql = "SELECT * FROM tb_std_info";
@@ -38,10 +47,40 @@
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <input type="submit" name="btnDipositMoney" class="btn btn-info form-control" value="Save">
+                <!-- <input type="submit" name="btnDipositMoney" class="btn btn-info form-control" value="Save"> -->
             </div>
         </div>
     </div>
+    <br><br>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <label for="fname"class="form-label" >Dipositor</label>
+            <select class="form-select">
+            <?php 
+                $sql = "SELECT * FROM tb_std_info";
+                $result = mysqli_query($conn,$sql);
+                ?><option selected disabled>Select name</option><?php
+                while($row = mysqli_fetch_array($result)){?>
+                    
+                    <option value="<?php echo $row['Id'];?>"><?php echo $row['Name'];?></option>
+            <?php    }?>
+            </select>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="fname"class="form-label" >Amount $</label>
+                <input type="number" name="txtAmount" class="form-control" required placeholder="Amount">
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <br><br>
 </div>
     
 </body>
