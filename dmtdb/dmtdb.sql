@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2023 at 01:33 PM
+-- Generation Time: Sep 25, 2023 at 02:38 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -21,6 +21,46 @@ SET time_zone = "+00:00";
 --
 -- Database: `dmtdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_diposit_money`
+--
+
+CREATE TABLE `tb_diposit_money` (
+  `Id` int(11) NOT NULL,
+  `Date` date NOT NULL,
+  `R_Name` varchar(90) NOT NULL,
+  `D_Name` varchar(90) NOT NULL,
+  `Purpose` varchar(120) NOT NULL,
+  `Amount` int(11) NOT NULL,
+  `Remark` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_diposit_money`
+--
+
+INSERT INTO `tb_diposit_money` (`Id`, `Date`, `R_Name`, `D_Name`, `Purpose`, `Amount`, `Remark`) VALUES
+(1, '2023-09-24', 'Shamim Hossain', 'Ashraful Islam', 'Food', 2500, 'N/A'),
+(2, '2023-09-15', 'Shamim Hossain', 'Prothoma Islam', 'Food', 1000, 'N/A'),
+(3, '2023-09-05', 'Shamim Hossain', 'Meghla Akter', 'Wifi', 250, 'N/A'),
+(4, '2023-09-10', 'Shamim Hossain', 'Sourov Ahmed', 'Electricity', 200, 'N/A'),
+(5, '2023-09-01', 'Shamim Hossain', 'Fahim Khandokar', 'Food', 3000, 'N/A'),
+(6, '2023-02-09', 'Shamim Hossain', 'Shahed Parvej', 'Food', 2200, 'N/A'),
+(7, '2023-09-09', 'Shamim Hossain', 'Pavel Munshi', 'Food', 1500, 'N/A'),
+(8, '2023-09-13', 'Shamim Hossain', 'Pavel Munshi', 'Electricity', 200, 'N/A'),
+(9, '2023-09-05', 'Shamim Hossain', 'Ibrahim Khan', 'Water', 150, 'N/A'),
+(10, '2023-09-04', 'Shamim Hossain', 'Farjana Akter', 'Food', 2000, 'N/A'),
+(11, '2023-09-02', 'Shamim Hossain', 'Abir Hossain', 'Food', 2000, 'N/A'),
+(12, '2023-01-03', 'Shamim Hossain', 'Rifat Akter', 'Food', 2300, 'N/A'),
+(13, '2023-09-07', 'Shamim Hossain', 'Abir Hossain', 'Food Cooker', 500, 'N/A'),
+(14, '2023-09-09', 'Shamim Hossain', 'Mohaiminul Islam', 'Food', 2300, 'N/A'),
+(15, '2023-09-12', 'Shamim Hossain', 'Rayhan Islam', 'Food', 3000, 'N/A'),
+(16, '2023-09-12', 'Shamim Hossain', 'Joy Debnath', 'Food', 2500, 'N/A'),
+(17, '2023-09-04', 'Shamim Hossain', 'Rayhan Islam', 'Food', 2600, 'N/A'),
+(18, '2023-09-09', 'Shamim Hossain', 'Aysha Akter', 'Wifi', 200, 'N/A');
 
 -- --------------------------------------------------------
 
@@ -64,11 +104,19 @@ INSERT INTO `tb_std_info` (`Id`, `Name`, `DateOfBirth`, `Department`, `Gender`, 
 (17, 'Trishna Pual', '2003-05-12', 'CSE', 'Female', 'Saver', 321654987, 465798321, 'N/A'),
 (18, 'Sharmin Akter', '2001-08-25', 'Textile', 'Female', 'Gazipur', 321654987, 321654987, 'N/A'),
 (19, 'Aysha Akter', '2001-10-10', 'FOOD', 'Female', 'Tangail', 321654987, 321654987, 'N/A'),
-(20, 'Mohaiminul Islam', '1998-01-15', 'CSE', 'Male', 'Nator', 465465654, 654654654, 'N/A');
+(20, 'Mohaiminul Islam', '1998-01-15', 'CSE', 'Male', 'Nator', 465465654, 654654654, 'N/A'),
+(21, 'Rifat Akter', '2005-05-25', 'FOOD', 'Female', 'Sylhet', 321654987, 465498745, 'N/A'),
+(22, 'Abir Hossain', '2001-12-10', 'Textile', 'Male', 'Kaliakair', 654987321, 654987654, 'N/A');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tb_diposit_money`
+--
+ALTER TABLE `tb_diposit_money`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `tb_std_info`
@@ -81,10 +129,16 @@ ALTER TABLE `tb_std_info`
 --
 
 --
+-- AUTO_INCREMENT for table `tb_diposit_money`
+--
+ALTER TABLE `tb_diposit_money`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
 -- AUTO_INCREMENT for table `tb_std_info`
 --
 ALTER TABLE `tb_std_info`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

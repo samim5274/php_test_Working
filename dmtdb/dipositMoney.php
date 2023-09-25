@@ -87,8 +87,20 @@
 
 <div class="container">
     <div class="row">
-        <div class="col text-center my-4">
+        <div class="col text-center my-1">
             <h1>Money Diposit</h1>
+            <h4>
+                <div class="text-right">
+                    <?php
+                        $totalAmount = "SELECT sum(Amount) FROM tb_diposit_money";
+                        $sumResult = $conn->query($totalAmount);
+                        while($row = mysqli_fetch_array($sumResult))
+                        {
+                            echo"Total Amount: ".$row['sum(Amount)'];
+                        }
+                    ?>
+                </div>
+            </h4>
         </div>
     </div>
 </div>
@@ -96,8 +108,8 @@
 
 <div class="container">
     <div class="row">
-        <form action="dipositMoneyBack.php" method="POST">
-            <div class="col-md-5">
+        <div class="col-md-6">
+            <form action="dipositMoneyBack.php" method="POST">
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
@@ -116,7 +128,7 @@
                             ?><option selected disabled>Select name</option><?php
                             while($row = mysqli_fetch_array($result)){?>
                                 
-                                <option value="<?php echo $row['Id'];?>"><?php echo $row['Name'];?></option>
+                                <option value="<?php echo $row['Name'];?>"><?php echo $row['Name'];?></option>
                         <?php    }?>
                         </select>
                     </div>
@@ -132,7 +144,7 @@
                             ?><option selected disabled>Select name</option><?php
                             while($row = mysqli_fetch_array($result)){?>
                                 
-                                <option value="<?php echo $row['Id'];?>"><?php echo $row['Name'];?></option>
+                                <option value="<?php echo $row['Name'];?>"><?php echo $row['Name'];?></option>
                         <?php    }?>
                         </select>
                     </div>
@@ -141,14 +153,15 @@
                 <div class="row">
                     <div class="col">
                         <label for="deaprtment"class="form-label">Purpose</label><br>
-                    <select name="cbxDepartment" required id="deaprtment" class="form-select">
-                        <option selected disabled>Select Department</option>
-                        <option value="1">Food</option>
-                        <option value="2">Food Cooker</option>
-                        <option value="3">Wifi</option>
-                        <option value="4">Water</option>
-                        <option value="5">Dirt</option>
-                        <option value="6">Gas</option>
+                    <select name="cbxPurpose" required id="deaprtment" class="form-select">
+                        <option selected disabled>Select Purpose</option>
+                        <option value="Food">Food</option>
+                        <option value="Food Cooker">Food Cooker</option>
+                        <option value="Wifi">Wifi</option>
+                        <option value="Water">Water</option>
+                        <option value="Dirt">Dirt</option>
+                        <option value="Gas">Gas</option>
+                        <option value="Electricity">Electricity</option>
                     </select>
                     </div>
                 </div>
@@ -170,13 +183,53 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
             <br>
+        </div>
+
+        <!--Data show code start-->
+
+        <div class="col-md-6 overflow-auto" 
+  style="max-width: 100%; max-height: 700px;">
+                <table class="table table-bordered text-center ">
+                    <tr>
+                        <th>SL</th>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Purpose</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tbody>
+
+                    <?php
+                        $sqlShow = "SELECT * FROM `tb_diposit_money` ";
+                        $i=1;
+                        $result = $conn->query($sqlShow);
+                        if(!$result)
+                        {
+                            die("Invalid Query: ".$conn->connection_error);
+                        }
+                        while($row = $result->fetch_assoc())
+                        {
+                            echo"
+                            <tr>
+                                <td>".$i++."</td>
+                                <td>".$row["Date"]."</td>
+                                <td>".$row["D_Name"]."</td>
+                                <td>".$row["Purpose"]."</td>
+                                <td>".$row["Amount"]."</td>
+                            </tr>
+                            ";
+                        }
+                    ?>
+
+                    </tbody>
+                </table>
+            </div>
     </div>
 </div>
 
-<br><br><br><br><hr>
+<br><br><hr>
 
 </body>
 </html>
