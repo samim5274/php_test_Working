@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2023 at 02:38 PM
+-- Generation Time: Sep 26, 2023 at 12:41 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -60,7 +60,12 @@ INSERT INTO `tb_diposit_money` (`Id`, `Date`, `R_Name`, `D_Name`, `Purpose`, `Am
 (15, '2023-09-12', 'Shamim Hossain', 'Rayhan Islam', 'Food', 3000, 'N/A'),
 (16, '2023-09-12', 'Shamim Hossain', 'Joy Debnath', 'Food', 2500, 'N/A'),
 (17, '2023-09-04', 'Shamim Hossain', 'Rayhan Islam', 'Food', 2600, 'N/A'),
-(18, '2023-09-09', 'Shamim Hossain', 'Aysha Akter', 'Wifi', 200, 'N/A');
+(18, '2023-09-09', 'Shamim Hossain', 'Aysha Akter', 'Wifi', 200, 'N/A'),
+(19, '2023-09-16', 'Shamim Hossain', 'Mohaiminul Islam', 'Water', 150, 'N/A'),
+(20, '2023-09-06', 'Shamim Hossain', 'Pavel Munshi', 'Food', 2000, 'N/A'),
+(21, '2023-09-26', 'Shamim Hossain', 'Fahim Khandokar', 'Wifi', 450, 'N/A'),
+(22, '2023-09-01', 'Shamim Hossain', 'Sourov Ahmed', 'Food', 1000, 'N/A'),
+(23, '2023-09-26', 'Shamim Hossain', 'Rayhan Islam', 'Wifi', 200, 'N/A');
 
 -- --------------------------------------------------------
 
@@ -106,7 +111,8 @@ INSERT INTO `tb_std_info` (`Id`, `Name`, `DateOfBirth`, `Department`, `Gender`, 
 (19, 'Aysha Akter', '2001-10-10', 'FOOD', 'Female', 'Tangail', 321654987, 321654987, 'N/A'),
 (20, 'Mohaiminul Islam', '1998-01-15', 'CSE', 'Male', 'Nator', 465465654, 654654654, 'N/A'),
 (21, 'Rifat Akter', '2005-05-25', 'FOOD', 'Female', 'Sylhet', 321654987, 465498745, 'N/A'),
-(22, 'Abir Hossain', '2001-12-10', 'Textile', 'Male', 'Kaliakair', 654987321, 654987654, 'N/A');
+(22, 'Abir Hossain', '2001-12-10', 'Textile', 'Male', 'Kaliakair', 654987321, 654987654, 'N/A'),
+(23, 'Dipu Dipu', '1980-12-12', 'DBA', 'Male', 'Dhaka,Bangladesh', 2147483647, 2147483647, 'N/A');
 
 --
 -- Indexes for dumped tables
@@ -132,13 +138,13 @@ ALTER TABLE `tb_std_info`
 -- AUTO_INCREMENT for table `tb_diposit_money`
 --
 ALTER TABLE `tb_diposit_money`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `tb_std_info`
 --
 ALTER TABLE `tb_std_info`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

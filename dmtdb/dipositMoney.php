@@ -180,6 +180,9 @@
                             <div class="form-group">
                                 <input type="submit" name="btnDipositMoney" class="btn btn-info form-control mt-4" value="Save">
                             </div>
+                            <div class="form-group">
+                                <a href="index.php"><input class="btn btn-warning form-control mt-4" value="Back"></a>
+                            </div>
                         </div>
                     </div>
                 </div>
