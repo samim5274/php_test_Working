@@ -46,7 +46,7 @@
                 </div><br>
                 <div class="form-group">
                     <label for="mil"  class="form-label">Total Mill</label>
-                    <input type="float" required class="form-control" placeholder="Total mill" >
+                    <input type="float" name="txtMil" required class="form-control" placeholder="Total mill" >
                 </div><br>
                 <div class="form-group">
                 <label for="remark" class="form-label">Remark's</label>
@@ -54,11 +54,30 @@
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-success form-control mt-4" value="Save">
-                    <a href="index.php"><input class="btn btn-warning form-control mt-4" value="Back"></a>
+                    <a href="index.php"><input class="btn btn-warning form-control mt-4" name="btnSave" value="Back"></a>
                 </div>
                 </form>
             </div>
-            <div class="col-md-6 text-center"><h1>Data Show Section</h1></div>
+            <div class="col-md-6 text-center ">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <th>SL</th>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Mill</th>
+                        <th>Remark</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>27-09-2023</td>
+                            <td>Shamim Hossain</td>
+                            <td>3</td>
+                            <td>N/A</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </section>

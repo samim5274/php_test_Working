@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2023 at 12:41 PM
+-- Generation Time: Sep 27, 2023 at 02:31 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -65,7 +65,34 @@ INSERT INTO `tb_diposit_money` (`Id`, `Date`, `R_Name`, `D_Name`, `Purpose`, `Am
 (20, '2023-09-06', 'Shamim Hossain', 'Pavel Munshi', 'Food', 2000, 'N/A'),
 (21, '2023-09-26', 'Shamim Hossain', 'Fahim Khandokar', 'Wifi', 450, 'N/A'),
 (22, '2023-09-01', 'Shamim Hossain', 'Sourov Ahmed', 'Food', 1000, 'N/A'),
-(23, '2023-09-26', 'Shamim Hossain', 'Rayhan Islam', 'Wifi', 200, 'N/A');
+(23, '2023-09-26', 'Shamim Hossain', 'Rayhan Islam', 'Wifi', 200, 'N/A'),
+(24, '2023-09-27', 'Shamim Hossain', 'Aysha Akter', 'Food', 2000, 'N/A');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_milldetail`
+--
+
+CREATE TABLE `tb_milldetail` (
+  `Id` int(11) NOT NULL,
+  `Date` date NOT NULL,
+  `Name` varchar(250) NOT NULL,
+  `Mill` float NOT NULL,
+  `Remark` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_milldetail`
+--
+
+INSERT INTO `tb_milldetail` (`Id`, `Date`, `Name`, `Mill`, `Remark`) VALUES
+(1, '2023-09-27', 'Shamim Hossain', 3, 'N/A'),
+(2, '2023-09-27', 'Ashraful Islam', 2, 'N/A'),
+(3, '2023-09-27', 'Prothoma Islam', 3, 'N/A'),
+(4, '2023-09-27', 'Shahed Parvej', 2, ''),
+(5, '2023-09-27', 'Fahim Khandokar', 3, ''),
+(6, '2023-09-27', 'Sourov Ahmed', 2.5, 'N/A');
 
 -- --------------------------------------------------------
 
@@ -125,6 +152,12 @@ ALTER TABLE `tb_diposit_money`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `tb_milldetail`
+--
+ALTER TABLE `tb_milldetail`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `tb_std_info`
 --
 ALTER TABLE `tb_std_info`
@@ -138,7 +171,13 @@ ALTER TABLE `tb_std_info`
 -- AUTO_INCREMENT for table `tb_diposit_money`
 --
 ALTER TABLE `tb_diposit_money`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `tb_milldetail`
+--
+ALTER TABLE `tb_milldetail`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_std_info`
