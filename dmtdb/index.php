@@ -31,7 +31,7 @@
                     <a class="page-link" href="dipositMoney.php">Money Diposit</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="#">Mil Details</a>
+                    <a class="page-link" href="milDetail.php">Mil Details</a>
                 </li>                
             </ul>
             <ul class="pagination">
