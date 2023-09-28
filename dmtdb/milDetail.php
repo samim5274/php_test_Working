@@ -17,6 +17,18 @@
                 <h3 class="display-4">Mill Detail</h3>
             </div>
         </div>
+        <h5>
+            <div class="text-center">
+                <?php
+                    $totalMill = "SELECT sum(Mill) FROM `tb_milldetail`";
+                    $sumResult = $conn->query($totalMill);
+                    while($row = mysqli_fetch_array($sumResult))
+                    {
+                        echo"Total Mill: ".$row['sum(Mill)'];
+                    }
+                ?>
+            </div>
+        </h5>
     </div>
 </section>
     
@@ -58,23 +70,40 @@
                 </div>
                 </form>
             </div>
-            <div class="col-md-6 text-center ">
+            <div class="col-md-6 overflow-auto text-center " style="max-width: 100%; max-height: 650px;">
                 <table class="table table-bordered text-center">
                     <thead>
-                        <th>SL</th>
+                        <th>Id</th>
                         <th>Date</th>
                         <th>Name</th>
                         <th>Mill</th>
                         <th>Remark</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>27-09-2023</td>
-                            <td>Shamim Hossain</td>
-                            <td>3</td>
-                            <td>N/A</td>
-                        </tr>
+                        <?php
+                        
+                        $sqlShow = "SELECT * FROM `tb_milldetail`";
+                        $i=1;
+                        $sqlResult = $conn->query($sqlShow);
+                        if(!$sqlResult)
+                        {
+                            die("Invalid Query: ".$conn->connection_error);
+                        }
+                        while($row = $sqlResult->fetch_assoc())
+                        {
+                            echo"
+                            <tr>
+                                <td>".$row["Id"]."</td>
+                                <td>".$row["Date"]."</td>
+                                <td>".$row["Name"]."</td>
+                                <td>".$row["Mill"]."</td>
+                                <td>".$row["Remark"]."</td>
+                            </tr>
+                            ";
+                        }
+                        
+                        ?>
+                        
                     </tbody>
                 </table>
             </div>

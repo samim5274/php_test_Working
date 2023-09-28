@@ -1,4 +1,4 @@
-<?php include 'dmtdb.php'?>
+<?php include 'dmtdb.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +14,9 @@
     <div class="row text-center">
         <h1 class="display-4">Dormitor System</h1>
         <div class="col">
-        <button class="btn btn-info "><a href="StudentInfo/std_info.php">Insert</a></button>            
-        <button class="btn btn-warning "><a href="dipositMoney.php">Money Diposit</a></button>            
-        <button class="btn btn-danger ">Mil</button>            
+        <a href="StudentInfo/std_info.php"><button class="btn btn-info ">Insert</button></a>            
+        <a href="dipositMoney.php"><button class="btn btn-warning ">Money Diposit</button></a>          
+        <a href="milDetail.php"><button class="btn btn-danger ">Mil</button> </a>           
         </div>
     </div>
     <div class="row my-4">
@@ -32,13 +32,17 @@
                 </li>
                 <li class="page-item">
                     <a class="page-link" href="milDetail.php">Mil Details</a>
-                </li>                
+                </li>  
+                <li class="page-item">
+                    <a class="page-link" href="expenses.php">Expenses</a>
+                </li>               
             </ul>
             <ul class="pagination">
                 <li class="page-item disabled"><a class="page-link">All Filter</a></li>
                 <li class="page-item"><a href="StudentInfo/filterStd.php" class="page-link">Student Filter</a></li>
                 <li class="page-item"><a href="dipositMoneyFilter.php" class="page-link">Diposit Money Filter</a></li>
-                <li class="page-item"><a href="#" class="page-link">Mill Filter</a></li>
+                <li class="page-item"><a href="millFilter.php" class="page-link">Mill Filter</a></li>
+                <li class="page-item"><a href="#" class="page-link">Expenses Filter</a></li>
             </ul>
         </nav>
     </div>

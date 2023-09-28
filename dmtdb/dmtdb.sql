@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2023 at 02:31 PM
+-- Generation Time: Sep 28, 2023 at 02:22 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -71,6 +71,31 @@ INSERT INTO `tb_diposit_money` (`Id`, `Date`, `R_Name`, `D_Name`, `Purpose`, `Am
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_expenses`
+--
+
+CREATE TABLE `tb_expenses` (
+  `Id` int(11) NOT NULL,
+  `Date` date NOT NULL,
+  `Name` varchar(250) NOT NULL,
+  `Amount` int(11) NOT NULL,
+  `Remark` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_expenses`
+--
+
+INSERT INTO `tb_expenses` (`Id`, `Date`, `Name`, `Amount`, `Remark`) VALUES
+(1, '2023-09-28', 'Ashraful Islam', 2000, 'Morgi,Sobji,Oil etc'),
+(2, '2023-09-14', 'Prothoma Islam', 1850, 'Rice'),
+(3, '2023-09-26', 'Pavel Munshi', 1500, 'N/A'),
+(4, '2023-09-12', 'Meghla Akter', 1200, 'Fish,Mosla etc.'),
+(5, '2023-09-15', 'Rayhan Islam', 1600, 'N/A');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_milldetail`
 --
 
@@ -92,7 +117,22 @@ INSERT INTO `tb_milldetail` (`Id`, `Date`, `Name`, `Mill`, `Remark`) VALUES
 (3, '2023-09-27', 'Prothoma Islam', 3, 'N/A'),
 (4, '2023-09-27', 'Shahed Parvej', 2, ''),
 (5, '2023-09-27', 'Fahim Khandokar', 3, ''),
-(6, '2023-09-27', 'Sourov Ahmed', 2.5, 'N/A');
+(6, '2023-09-27', 'Sourov Ahmed', 2.5, 'N/A'),
+(7, '2023-09-28', 'sa mim', 3, ''),
+(8, '2023-09-28', 'Shamim Hossain', 3, ''),
+(9, '2023-09-28', 'Ashraful Islam', 3, 'N/A'),
+(10, '2023-09-28', 'Prothoma Islam', 2, 'N/A'),
+(11, '2023-09-28', 'Sourov Ahmed', 3, ''),
+(12, '2023-09-28', 'Fahim Khandokar', 2, ''),
+(13, '2023-09-28', 'Meghla Akter', 2, ''),
+(14, '2023-09-28', 'Ibrahim Khan', 2, ''),
+(15, '2023-09-28', 'Farjana Akter', 3, 'N/A'),
+(16, '2023-09-28', 'Shajahan Khan', 3, 'N/A'),
+(17, '2023-09-28', 'Iffat Akter', 4, '1 Guest'),
+(18, '2023-09-27', 'Trishna Pual', 5, '2 Guest'),
+(19, '2023-09-28', 'Aysha Akter', 2.5, 'N/A'),
+(20, '2023-09-28', 'Dipu Dipu', 1, 'N/A'),
+(21, '2023-09-28', 'Abir Hossain', 3, 'N/A');
 
 -- --------------------------------------------------------
 
@@ -152,6 +192,12 @@ ALTER TABLE `tb_diposit_money`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indexes for table `tb_expenses`
+--
+ALTER TABLE `tb_expenses`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indexes for table `tb_milldetail`
 --
 ALTER TABLE `tb_milldetail`
@@ -174,10 +220,16 @@ ALTER TABLE `tb_diposit_money`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
+-- AUTO_INCREMENT for table `tb_expenses`
+--
+ALTER TABLE `tb_expenses`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `tb_milldetail`
 --
 ALTER TABLE `tb_milldetail`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tb_std_info`
