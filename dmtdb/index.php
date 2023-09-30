@@ -42,7 +42,7 @@
                 <li class="page-item"><a href="StudentInfo/filterStd.php" class="page-link">Student Filter</a></li>
                 <li class="page-item"><a href="dipositMoneyFilter.php" class="page-link">Diposit Money Filter</a></li>
                 <li class="page-item"><a href="millFilter.php" class="page-link">Mill Filter</a></li>
-                <li class="page-item"><a href="#" class="page-link">Expenses Filter</a></li>
+                <li class="page-item"><a href="expensesFilter.php" class="page-link">Expenses Filter</a></li>
             </ul>
         </nav>
     </div>

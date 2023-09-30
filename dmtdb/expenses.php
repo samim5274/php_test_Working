@@ -58,12 +58,12 @@
                     <label for="remark"class="form-label">Bazar Detail's</label>
                     <textarea class="form-control" name="txtRemark" placeholder="You can write something for bazar details(Optional)." id="remark" cols="30" rows="5"></textarea>
                 </div><br>
-                <input type="submit" name="btnSave" class="btn btn-info my-4" value="Save">
-                <a href="" class="text-light"><button class="btn btn-warning">Data Filter</button></a>
+                <input type="submit" name="btnSave" class="btn btn-info my-4" value="Save">                
             </form>
+            <a href="expensesFilter.php" class="text-light"><button class="btn btn-warning">Data Filter</button></a>
             <a href="index.php" class="text-light"><button class="btn btn-warning">Back</button></a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 overflow-auto" style="max-width: 100%; max-height: 650px;">
             <table class="table table-bordered text-center ">
                 <thead>
                     <th>SL</th>
