@@ -1,4 +1,4 @@
-<?php include 'dmtdb.php' ?>
+<?php include 'dmtdb.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +47,114 @@
         </nav>
     </div>
 </div>
+
+
+
+    <!--Total Expenses and total mill and mill rate-->
+
+
+    <section><form action="" method="POST">
+        <div class="container">
+            <div class="row text-center my-4">
+                <h4 class="display-4">Total Expenses and Total Mill and Mill Rate</h4>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="date" name="startDate" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="date" name="endDate" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="submit" name="btnFilter" class="btn btn-info form-control" value="Search">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <?php
+                        
+                        if(isset($_POST['btnFilter']))
+                        {
+                            $startDate = $_POST['startDate'];
+                            $endDate = $_POST['endDate'];
+
+                            $totalMoney = "SELECT sum(Mill) FROM `tb_milldetail`WHERE Date BETWEEN '$startDate' AND '$endDate'";
+                            $sumResult = $conn->query($totalMoney);
+                            while($row = mysqli_fetch_array($sumResult))
+                            {
+                                ?><p>Total Mill $ : </p><h1 class="text-center my-4"><?php echo $totalMill = $row['sum(Mill)']; ?> </h1><?php
+                                // echo "Total : ".$row['sum(Amount)'];
+                            }
+                        }
+                    ?>
+                </div>
+                <div class="col-md-4">
+                    <?php
+                        
+                        if(isset($_POST['btnFilter']))
+                        {
+                            $startDate = $_POST['startDate'];
+                            $endDate = $_POST['endDate'];
+                            
+                            $totalMoney = "SELECT sum(Amount) FROM `tb_expenses`WHERE Date BETWEEN '$startDate' AND '$endDate'";
+                            $sumResult = $conn->query($totalMoney);
+                            while($row = mysqli_fetch_array($sumResult))
+                            {
+                                ?><p>Total Expenses $ : </p><h1 class="text-center my-4"><?php echo $totalEAmount = $row['sum(Amount)']; ?>/- </h1><?php
+                                // echo "Total : ".$row['sum(Amount)'];
+                            }
+                        }
+                    ?>
+                </div>
+                <div class="col-md-4">
+                    <?php
+                        
+                       if(isset($_POST['btnFilter']))
+                       {
+                           $totalDMoney = "SELECT sum(Amount) FROM `tb_diposit_money`WHERE Date BETWEEN '$startDate' AND '$endDate'";
+                           $sumResult = $conn->query($totalDMoney);
+                           while($row = mysqli_fetch_array($sumResult))
+                           {
+                               ?><p>Total Money Diposit $ : </p><h1 class="text-center my-4"><?php echo $totalDAmount = $row['sum(Amount)']; ?>/- </h1><?php
+                               // echo "Total : ".$row['sum(Amount)'];
+                           }
+                       }
+                       
+                    ?>
+                </div>
+            </div>
+        </div>
+        </form><hr>
+        <div class="container">
+            <p><?php 
+                if(isset($_POST['btnFilter']))
+                {
+                    $totalEAmount; 
+                    $totalDAmount;
+                    $totalMill;  
+                    if(!$totalDAmount)
+                    {
+                        if(!$totalEAmount)
+                        {
+                            echo"Please select currect date and try again. Thank you.";
+                        }
+                    }
+                    else
+                    {
+                        echo "Mill Rate: ".$millRate = $totalEAmount/$totalMill;
+                        echo "; Available Amount: ".$availableAmount = $totalDAmount-$totalEAmount;
+                    }
+                }
+            ?></p>
+        </div>
+    </section>
     
 </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2023 at 02:22 PM
+-- Generation Time: Oct 02, 2023 at 02:25 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -66,7 +66,10 @@ INSERT INTO `tb_diposit_money` (`Id`, `Date`, `R_Name`, `D_Name`, `Purpose`, `Am
 (21, '2023-09-26', 'Shamim Hossain', 'Fahim Khandokar', 'Wifi', 450, 'N/A'),
 (22, '2023-09-01', 'Shamim Hossain', 'Sourov Ahmed', 'Food', 1000, 'N/A'),
 (23, '2023-09-26', 'Shamim Hossain', 'Rayhan Islam', 'Wifi', 200, 'N/A'),
-(24, '2023-09-27', 'Shamim Hossain', 'Aysha Akter', 'Food', 2000, 'N/A');
+(24, '2023-09-27', 'Shamim Hossain', 'Aysha Akter', 'Food', 2000, 'N/A'),
+(25, '2023-10-02', 'Ashraful Islam', 'Shahed Parvej', 'Food', 500, ''),
+(26, '2023-10-01', 'Ashraful Islam', 'Sourov Ahmed', 'Food', 1000, ''),
+(27, '2023-10-02', 'Ashraful Islam', 'Rayhan Islam', 'Food', 2500, '');
 
 -- --------------------------------------------------------
 
@@ -87,11 +90,25 @@ CREATE TABLE `tb_expenses` (
 --
 
 INSERT INTO `tb_expenses` (`Id`, `Date`, `Name`, `Amount`, `Remark`) VALUES
-(1, '2023-09-28', 'Ashraful Islam', 2000, 'Morgi,Sobji,Oil etc'),
-(2, '2023-09-14', 'Prothoma Islam', 1850, 'Rice'),
-(3, '2023-09-26', 'Pavel Munshi', 1500, 'N/A'),
-(4, '2023-09-12', 'Meghla Akter', 1200, 'Fish,Mosla etc.'),
-(5, '2023-09-15', 'Rayhan Islam', 1600, 'N/A');
+(1, '2023-09-28', 'Ashraful Islam', 200, 'N/A'),
+(2, '2023-09-14', 'Prothoma Islam', 200, 'N/A'),
+(3, '2023-09-26', 'Pavel Munshi', 150, 'N/A'),
+(4, '2023-09-12', 'Meghla Akter', 120, 'N/A'),
+(5, '2023-09-15', 'Rayhan Islam', 160, 'N/A'),
+(6, '2023-09-29', 'Fahim Khandokar', 120, 'N/A'),
+(7, '2023-09-30', 'Prothoma Islam', 900, 'N/A'),
+(8, '2023-09-19', 'Pavel Munshi', 450, 'N/A'),
+(9, '2023-09-28', 'Meghla Akter', 350, 'N/A'),
+(10, '2023-09-15', 'Dipu Dipu', 400, 'N/A'),
+(11, '2023-11-13', 'Mohaiminul Islam', 900, 'N/A'),
+(12, '2023-09-26', 'Fahim Khandokar', 120, 'N/A'),
+(13, '2023-09-06', 'Rayhan Islam', 150, 'N/A'),
+(14, '2023-09-26', 'Ashraful Islam', 250, 'N/A'),
+(15, '2023-09-02', 'Joy Debnath', 50, 'N/A'),
+(16, '2023-09-19', 'Sourov Ahmed', 230, 'N/A'),
+(17, '2023-09-20', 'Ibrahim Khan', 50, ''),
+(18, '2023-10-02', 'Prothoma Islam', 120, ''),
+(19, '2023-10-01', 'Pavel Munshi', 30, '');
 
 -- --------------------------------------------------------
 
@@ -132,7 +149,13 @@ INSERT INTO `tb_milldetail` (`Id`, `Date`, `Name`, `Mill`, `Remark`) VALUES
 (18, '2023-09-27', 'Trishna Pual', 5, '2 Guest'),
 (19, '2023-09-28', 'Aysha Akter', 2.5, 'N/A'),
 (20, '2023-09-28', 'Dipu Dipu', 1, 'N/A'),
-(21, '2023-09-28', 'Abir Hossain', 3, 'N/A');
+(21, '2023-09-28', 'Abir Hossain', 3, 'N/A'),
+(22, '2023-09-01', 'Ashraful Islam', 4, ''),
+(23, '2023-09-14', 'Prothoma Islam', 3, ''),
+(24, '2023-09-09', 'Fahim Khandokar', 3, ''),
+(25, '2023-09-06', 'Sourov Ahmed', 3, ''),
+(26, '2023-10-01', 'Shamim Hossain', 2, ''),
+(27, '2023-10-02', 'Shamim Hossain', 2, '');
 
 -- --------------------------------------------------------
 
@@ -217,19 +240,19 @@ ALTER TABLE `tb_std_info`
 -- AUTO_INCREMENT for table `tb_diposit_money`
 --
 ALTER TABLE `tb_diposit_money`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `tb_expenses`
 --
 ALTER TABLE `tb_expenses`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tb_milldetail`
 --
 ALTER TABLE `tb_milldetail`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `tb_std_info`
