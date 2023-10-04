@@ -38,7 +38,7 @@
 </section><br><hr>
 
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col">
             <table class="table table-bordered text-center">
@@ -65,35 +65,76 @@
             </table>
         </div>
     </div>
+</div> -->
+
+<div class="continer">
+    <h2><?php 
+    if(isset($_POST['btnFilter']))
+            {
+                //total mill
+                $startDate = $_POST['startDate'];
+                $endDate = $_POST['endDate'];
+                $totalMoney = "SELECT sum(Mill) FROM `tb_milldetail`WHERE Date BETWEEN '$startDate' AND '$endDate'";
+                $sumResult = $conn->query($totalMoney);
+                while($row = mysqli_fetch_array($sumResult))
+                {
+                    ?><h5 class="text-center my-4">Total Mill : <?php echo $totalMill = $row['sum(Mill)']; ?>/- </h5><?php
+                    // echo "Total : ".$row['sum(Amount)'];
+                }
+                //total expenses
+                $totalMoney = "SELECT sum(Amount) FROM `tb_expenses`WHERE Date BETWEEN '$startDate' AND '$endDate'";
+                $sumResult = $conn->query($totalMoney);
+                while($row = mysqli_fetch_array($sumResult))
+                {
+                    ?><h5 class="text-center my-4">Total Expenses $ : <?php echo $totalExpenses = $row['sum(Amount)']; ?>/- </h5><?php
+                    // echo "Total : ".$row['sum(Amount)'];
+                }
+                //total diposit money
+                $totalDipositMoney = "SELECT sum(Amount) FROM `tb_diposit_money`WHERE Date BETWEEN '$startDate' AND '$endDate'";
+                $sumResult = $conn->query($totalDipositMoney);
+                while($row = mysqli_fetch_array($sumResult))
+                {
+                    ?><h5 class="text-center my-4">Total Money Diposit $ : <?php echo $totalDAmount = $row['sum(Amount)']; ?>/- </h5><?php
+                    // echo "Total : ".$row['sum(Amount)'];
+                }
+
+                $millRate = $totalExpenses/$totalMill;
+                $totalCost = $millRate*$totalMill;
+                $avilableAmount = $totalDAmount-$totalCost;
+                ?> <h5 class="text-center my-4">Mill Rate $ : <?php echo $millRate; ?>/- </h5><?php
+                ?> <h5 class="text-center my-4">Cost $ : <?php echo $totalCost; ?>/- </h5><?php
+                ?> <h5 class="text-center my-4">Cost $ : <?php echo $avilableAmount; ?>/- </h5><?php
+            }
+                        
+            ?></h2>
 </div>
 
 
-<!-- <section>
+
+<section>
     <div class="container">
 
         <div class="row">
-            <div class="col-md-12 overflow-auto" style="max-width: 100%; max-height: 600px;">
+            <div class="col-md-12">
                 <table class="table table-bordered text-center">
                     <thead>
                         <th>SL</th>
-                        <th>Date</th>
                         <th>Name</th>
                         <th>Mill</th>
-                        <th>Remark</th>
+                        <th>Mill Rate</th>
+                        <th>Cost</th>
+                        <th>Diposit</th>
+                        <th>Available</th>
                     </thead>
                     <tbody>
 
                     
         <?php
-            $sqlShow = "SELECT * FROM `tb_std_info`";
-            $showResult = mysqli_query($conn,$sqlShow);
-
+            
             if(isset($_POST['btnFilter']))
             {
-                $startDate = $_POST['startDate'];
-                $endDate = $_POST['endDate'];
-
-                $result = mysqli_query($conn,"SELECT * FROM `tb_milldetail` WHERE Date BETWEEN '$startDate' AND '$endDate'");
+                
+                $result = mysqli_query($conn,"SELECT * FROM `tb_std_info`");
                 if(mysqli_num_rows($result)>0) 
                 {
                     $i=1;
@@ -101,23 +142,15 @@
                     {?>
                         <tr>
                             <td><?=$i; ?></td>
-                            <td><?=$value['Date']?></td>
                             <td><?=$value['Name']?></td>
-                            <td><?=$value['Mill']?></td>
-                            <td><?=$value['Remark']?></td>
+                            <td><?=$totalMill?></td>
+                            <td><?=$millRate?></td>
+                            <td><?=$totalCost?></td>
+                            <td><?=$totalDAmount?></td>
+                            <td><?=$avilableAmount?></td>
                         </tr>
                 <?php  $i++;  }
                     
-                }
-            }
-            if(isset($_POST['btnFilter']))
-            {
-                $totalMoney = "SELECT sum(Mill) FROM `tb_milldetail`WHERE Date BETWEEN '$startDate' AND '$endDate'";
-                $sumResult = $conn->query($totalMoney);
-                while($row = mysqli_fetch_array($sumResult))
-                {
-                    ?><h5 class="text-center my-4">Total Mill Diposit $ : <?php echo $row['sum(Mill)']; ?>/- </h5><?php
-                    // echo "Total : ".$row['sum(Amount)'];
                 }
             }
         ?>
@@ -127,7 +160,7 @@
             </div>
         </div>
     </div>
-</section> -->
+</section>
 
 
 </body>

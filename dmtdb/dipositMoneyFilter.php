@@ -82,8 +82,8 @@
             }
             if(isset($_POST['btnFilter']))
             {
-                $totalMoney = "SELECT sum(Amount) FROM `tb_diposit_money`WHERE Date BETWEEN '$startDate' AND '$endDate'";
-                $sumResult = $conn->query($totalMoney);
+                $totalDipositMoney = "SELECT sum(Amount) FROM `tb_diposit_money`WHERE Date BETWEEN '$startDate' AND '$endDate'";
+                $sumResult = $conn->query($totalDipositMoney);
                 while($row = mysqli_fetch_array($sumResult))
                 {
                     ?><h5 class="text-center my-4">Total Money Diposit $ : <?php echo $row['sum(Amount)']; ?>/- </h5><?php
