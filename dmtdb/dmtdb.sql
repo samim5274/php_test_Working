@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2023 at 02:25 PM
+-- Generation Time: Oct 10, 2023 at 01:10 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -69,7 +69,30 @@ INSERT INTO `tb_diposit_money` (`Id`, `Date`, `R_Name`, `D_Name`, `Purpose`, `Am
 (24, '2023-09-27', 'Shamim Hossain', 'Aysha Akter', 'Food', 2000, 'N/A'),
 (25, '2023-10-02', 'Ashraful Islam', 'Shahed Parvej', 'Food', 500, ''),
 (26, '2023-10-01', 'Ashraful Islam', 'Sourov Ahmed', 'Food', 1000, ''),
-(27, '2023-10-02', 'Ashraful Islam', 'Rayhan Islam', 'Food', 2500, '');
+(27, '2023-10-02', 'Ashraful Islam', 'Rayhan Islam', 'Food', 2500, ''),
+(28, '2023-10-10', 'Ashraful Islam', 'Dipu Dipu', 'Food', 3200, 'N/A'),
+(29, '2023-10-09', 'Ashraful Islam', 'Dipu Dipu', 'Food Cooker', 500, 'N/A'),
+(30, '2023-10-02', 'Shamim Hossain', 'sa mim', 'Food', 1500, ''),
+(31, '2023-10-03', 'Ashraful Islam', 'Ashraful Islam', 'Food', 1500, ''),
+(32, '2023-10-03', 'sa mim', 'Prothoma Islam', 'Food', 1500, ''),
+(33, '2023-10-03', 'sa mim', 'Fahim Khandokar', 'Food', 1500, ''),
+(34, '2023-10-03', 'sa mim', 'Sourov Ahmed', 'Food', 1500, ''),
+(35, '2023-10-03', 'sa mim', 'Pavel Munshi', 'Food', 1500, ''),
+(36, '2023-10-03', 'sa mim', 'Joy Debnath', 'Food', 1500, ''),
+(37, '2023-10-02', 'sa mim', 'Rayhan Islam', 'Food', 1500, ''),
+(38, '2023-10-04', 'sa mim', 'Meghla Akter', 'Food', 1400, ''),
+(39, '2023-10-04', 'sa mim', 'Ibrahim Khan', 'Food', 1500, ''),
+(40, '2023-10-04', 'sa mim', 'Farjana Akter', 'Food', 2000, ''),
+(41, '2023-10-05', 'sa mim', 'Shajahan Khan', 'Food', 1500, ''),
+(42, '2023-10-05', 'sa mim', 'Iffat Akter', 'Food', 1500, ''),
+(43, '2023-10-05', 'sa mim', 'Megha Akter', 'Food', 1200, ''),
+(44, '2023-10-06', 'sa mim', 'Trishna Pual', 'Food', 1500, ''),
+(45, '2023-10-06', 'sa mim', 'Sharmin Akter', 'Food', 1500, ''),
+(46, '2023-10-07', 'sa mim', 'Aysha Akter', 'Food', 1500, ''),
+(47, '2023-10-07', 'sa mim', 'Mohaiminul Islam', 'Food', 1500, ''),
+(48, '2023-10-07', 'sa mim', 'Rifat Akter', 'Food', 1000, ''),
+(49, '2023-10-08', 'sa mim', 'Abir Hossain', 'Food', 1500, ''),
+(50, '2023-10-06', 'sa mim', 'Shamim Hossain', 'Food', 1500, '');
 
 -- --------------------------------------------------------
 
@@ -108,7 +131,10 @@ INSERT INTO `tb_expenses` (`Id`, `Date`, `Name`, `Amount`, `Remark`) VALUES
 (16, '2023-09-19', 'Sourov Ahmed', 230, 'N/A'),
 (17, '2023-09-20', 'Ibrahim Khan', 50, ''),
 (18, '2023-10-02', 'Prothoma Islam', 120, ''),
-(19, '2023-10-01', 'Pavel Munshi', 30, '');
+(19, '2023-10-01', 'Pavel Munshi', 30, ''),
+(20, '2023-10-04', 'Ashraful Islam', 50, ''),
+(21, '2023-10-03', 'Pavel Munshi', 1500, ''),
+(22, '2023-10-04', 'Rayhan Islam', 1200, '');
 
 -- --------------------------------------------------------
 
@@ -155,7 +181,34 @@ INSERT INTO `tb_milldetail` (`Id`, `Date`, `Name`, `Mill`, `Remark`) VALUES
 (24, '2023-09-09', 'Fahim Khandokar', 3, ''),
 (25, '2023-09-06', 'Sourov Ahmed', 3, ''),
 (26, '2023-10-01', 'Shamim Hossain', 2, ''),
-(27, '2023-10-02', 'Shamim Hossain', 2, '');
+(27, '2023-10-02', 'Shamim Hossain', 2, ''),
+(28, '2023-10-04', 'Shamim Hossain', 3, ''),
+(29, '2023-10-04', 'Ashraful Islam', 3, ''),
+(30, '2023-10-04', 'Prothoma Islam', 3, ''),
+(31, '2023-10-02', 'Shamim Hossain', 5, ''),
+(32, '2023-10-04', 'Ashraful Islam', 5, ''),
+(33, '2023-10-03', 'Prothoma Islam', 5, ''),
+(34, '2023-10-03', 'Shahed Parvej', 5, ''),
+(35, '2023-10-03', 'Fahim Khandokar', 5, ''),
+(36, '2023-10-03', 'Sourov Ahmed', 5, ''),
+(37, '2023-10-03', 'Pavel Munshi', 5, ''),
+(38, '2023-10-03', 'Joy Debnath', 5, ''),
+(39, '2023-10-03', 'Rayhan Islam', 5, ''),
+(40, '2023-10-03', 'Meghla Akter', 5, ''),
+(41, '2023-10-04', 'Ibrahim Khan', 5, ''),
+(42, '2023-10-04', 'Farjana Akter', 5, ''),
+(43, '2023-10-03', 'Shajahan Khan', 5, ''),
+(44, '2023-10-03', 'Iffat Akter', 5, ''),
+(45, '2023-10-03', 'Megha Akter', 5, ''),
+(46, '2023-10-03', 'Trishna Pual', 5, ''),
+(47, '2023-10-03', 'Sharmin Akter', 5, ''),
+(48, '2023-10-04', 'Sharmin Akter', 5, ''),
+(49, '2023-10-03', 'Mohaiminul Islam', 5, ''),
+(50, '2023-10-03', 'Rifat Akter', 5, ''),
+(51, '2023-10-03', 'Abir Hossain', 5, ''),
+(52, '2023-10-03', 'Dipu Dipu', 5, ''),
+(53, '2023-10-05', 'Aysha Akter', 5, ''),
+(54, '2023-10-04', 'sa mim', 10, '');
 
 -- --------------------------------------------------------
 
@@ -240,19 +293,19 @@ ALTER TABLE `tb_std_info`
 -- AUTO_INCREMENT for table `tb_diposit_money`
 --
 ALTER TABLE `tb_diposit_money`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `tb_expenses`
 --
 ALTER TABLE `tb_expenses`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `tb_milldetail`
 --
 ALTER TABLE `tb_milldetail`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `tb_std_info`

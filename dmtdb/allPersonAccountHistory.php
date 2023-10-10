@@ -98,12 +98,7 @@
                     // echo "Total : ".$row['sum(Amount)'];
                 }
 
-                $millRate = $totalExpenses/$totalMill;
-                $totalCost = $millRate*$totalMill;
-                $avilableAmount = $totalDAmount-$totalCost;
-                ?> <h5 class="text-center my-4">Mill Rate $ : <?php echo $millRate; ?>/- </h5><?php
-                ?> <h5 class="text-center my-4">Cost $ : <?php echo $totalCost; ?>/- </h5><?php
-                ?> <h5 class="text-center my-4">Cost $ : <?php echo $avilableAmount; ?>/- </h5><?php
+                $millRate = number_format($totalExpenses/$totalMill,2);
             }
                         
             ?></h2>
@@ -142,11 +137,35 @@
                     {?>
                         <tr>
                             <td><?=$i; ?></td>
-                            <td><?=$value['Name']?></td>
-                            <td><?=$totalMill?></td>
+                            <td><?= $name = $value['Name']?></td>
+                            <?php
+
+                                if(isset($_POST['btnFilter']))
+                                {
+                                    $sqlTotalDiposit = "SELECT sum(Amount) FROM `tb_diposit_money`WHERE D_Name LIKE '$name' AND Date BETWEEN '$startDate' AND '$endDate'";
+                                    $sumResultCC = $conn->query($sqlTotalDiposit);
+                                    while($row = mysqli_fetch_array($sumResultCC))
+                                    {
+                                        ?><?php $totalDAmount2= $row['sum(Amount)']; ?><?php
+                                    }
+
+                                    $totalMill2 = "SELECT sum(Mill) FROM `tb_milldetail`WHERE Name LIKE '$name' AND Date BETWEEN '$startDate' AND '$endDate'";
+                                    $sumResultMill = $conn->query($totalMill2);
+                                    while($row = mysqli_fetch_array($sumResultMill))
+                                    {
+                                        ?><?php $totalMillCC = $row['sum(Mill)']; ?><?php
+                                    }
+
+                                    $totalCost = $totalMillCC * $millRate;
+                                    $avilableAmount = $totalDAmount2 - $totalCost;
+
+                                }
+                                
+                            ?>
+                            <td><?=$totalMillCC?></td>
                             <td><?=$millRate?></td>
                             <td><?=$totalCost?></td>
-                            <td><?=$totalDAmount?></td>
+                            <td><?=$totalDAmount2?></td>
                             <td><?=$avilableAmount?></td>
                         </tr>
                 <?php  $i++;  }
@@ -161,6 +180,22 @@
         </div>
     </div>
 </section>
+
+<!--php filter name and date wise-->
+
+<!-- <?php
+
+    if(isset($_POST['btnFilter']))
+            {
+                $sqlTotalDiposit = "SELECT sum(Amount) FROM `tb_diposit_money`WHERE D_Name LIKE '$name' AND Date BETWEEN '$startDate' AND '$endDate'";
+                $sumResultCC = $conn->query($sqlTotalDiposit);
+                while($row = mysqli_fetch_array($sumResultCC))
+                {
+                    ?><h5 class="text-center my-4">L Total Money Diposit $ : <?php echo $row['sum(Amount)']; ?>/- </h5><?php
+                    // echo "Total : ".$row['sum(Amount)'];
+                }
+            }
+?> -->
 
 
 </body>
