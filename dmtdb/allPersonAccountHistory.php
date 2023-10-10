@@ -97,13 +97,11 @@
                     ?><h5 class="text-center my-4">Total Money Diposit $ : <?php echo $totalDAmount = $row['sum(Amount)']; ?>/- </h5><?php
                     // echo "Total : ".$row['sum(Amount)'];
                 }
-
-                $millRate = number_format($totalExpenses/$totalMill,2);
+                
             }
                         
             ?></h2>
 </div>
-
 
 
 <section>
@@ -124,15 +122,21 @@
                     <tbody>
 
                     
-        <?php
-            
+    <?php
+           
             if(isset($_POST['btnFilter']))
             {
-                
+                if(!$startDate)
+                {
+                    echo "Please select first and last date. And try again. Thank you.";
+                }
+                else
+                {
                 $result = mysqli_query($conn,"SELECT * FROM `tb_std_info`");
                 if(mysqli_num_rows($result)>0) 
                 {
                     $i=1;
+                    $millRate = number_format($totalExpenses/$totalMill,2);
                     foreach($result as $value)
                     {?>
                         <tr>
@@ -172,7 +176,8 @@
                     
                 }
             }
-        ?>
+        }
+    ?>
 
                     </tbody>
                 </table>
